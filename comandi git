@@ -1,2 +1,10 @@
 git config --global user.name "AlexanderBaffert"
 git config --global user.email "alexander.baffert@studenti.isissgobetti.it"
+
+----
+
+hint:   git config pull.rebase true   # rebase
+
+in caso di problemi con i commit
+
+----
