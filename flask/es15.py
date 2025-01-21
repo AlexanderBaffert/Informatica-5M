@@ -22,7 +22,7 @@ def get_db_connection():
         host="localhost",
         user="baffert",
         password="baffert",
-        database="hotel ",
+        database="baffert_hotel",
     )
 
 
@@ -76,6 +76,16 @@ def view_rooms():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT * FROM CAMERA WHERE disponibile = TRUE")
+    entries = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return render_template("list.html", entries=entries)
+
+@app.route("/pre", methods=["GET"])
+def view_rooms():
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM PRENOTAZIONE")
     entries = cursor.fetchall()
     cursor.close()
     conn.close()
