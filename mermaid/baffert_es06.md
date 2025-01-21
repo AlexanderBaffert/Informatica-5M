@@ -1,3 +1,4 @@
+
 ```mermaid
 erDiagram
     Utente ||--o{ Corso : crea
@@ -42,3 +43,4 @@ erDiagram
         string data
     }
 ```
+x
