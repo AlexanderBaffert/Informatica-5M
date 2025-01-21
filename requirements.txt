@@ -1,1 +1,4 @@
-flask, mysql.connector, werkzeug.security
+flask
+mysql.connector
+werkzeug.security
+mariadb
