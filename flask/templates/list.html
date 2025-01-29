@@ -28,49 +28,14 @@
                 {% endfor %}
             </tbody>
         </table>
-        <table>
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>data_arrivo</th>
-                    <th>data_partenza</th>
-                    <th>nome_cliente</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for pr in entries %}
-                    <tr>
-                        <td>{{ pr.id }}</td>
-                        <td>{{ pr.data_arrivo }}</td>
-                        <td>{{ pr.data_partenza }}</td>
-                        <td>{{ pr.nome_cliente }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <h2>Camere disponibili</h2>
-        <form method="POST" action="{{ url_for('view_rooms') }}">
-            <label for="numero_posti">Numero Posti:</label>
-            <input type="number" id="numero_posti" name="numero_posti">
-            <label for="disponibile">Disponibile:</label>
-            <input type="checkbox" id="disponibile" name="disponibile" value="1">
-            <p>
-                <input type="submit" value="Submit">
-            </p>
-        </form>
         <p>
             <a href="{{ url_for('view_rooms') }}"><button>View Rooms</button></a>
         </p>
         <h2>Visualizza Prenotazioni</h2>
-        <form method="POST" action="{{ url_for('view_reservations') }}">
-            <label for="data_arrivo">Data Arrivo:</label>
-            <input type="date" id="data_arrivo" name="data_arrivo">
-            <label for="data_partenza">Data Partenza:</label>
-            <input type="date" id="data_partenza" name="data_partenza">
-            <label for="nome_cliente">Nome Cliente:</label>
-            <input type="text" id="nome_cliente" name="nome_cliente">
-            <p>
-                <input type="submit" value="Submit">
-            </p> 
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+        {% include 'reservierung.html' %}
+    </div>
 </body>
 </html>

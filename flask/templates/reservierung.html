@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Entries</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>data_arrivo</th>
+                <th>data_partenza</th>
+                <th>nome_cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pr in entries %}
+                <tr>
+                    <td>{{ pr.id }}</td>
+                    <td>{{ pr.data_arrivo }}</td>
+                    <td>{{ pr.data_partenza }}</td>
+                    <td>{{ pr.nome_cliente }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

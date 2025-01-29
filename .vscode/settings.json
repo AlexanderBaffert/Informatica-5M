@@ -12,6 +12,19 @@
             "name": "boh",
             "database": "baffert_hotel",
             "username": "baffert"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "informatica",
+            "database": "hotel",
+            "username": "fade"
         }
     ]
 }

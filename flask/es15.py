@@ -20,9 +20,9 @@ app.secret_key = "your-secret-key-here"  # Change this to a secure secret key
 def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
-        user="baffert",
-        password="baffert",
-        database="baffert_hotel",
+        user="fade",
+        password="fade",
+        database="hotel",
     )
 
 
@@ -71,27 +71,30 @@ def add_entries():
         return redirect(url_for("list_entries"))
     return render_template("add.html")
 
-@app.route("/view", methods=["GET"])
+@app.route("/view", methods=["GET", "POST"])
 def view_rooms():
-    conn = get_db_connection()
-    cursor = conn.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM CAMERA WHERE disponibile = TRUE")
-    entries = cursor.fetchall()
-    cursor.close()
-    conn.close()
-    return render_template("list.html", entries=entries)
+    if request.method == "POST":
+        # Handle POST request
+        pass
+    else:
+        # Handle GET request
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM CAMERA WHERE disponibile = TRUE")
+        entries = cursor.fetchall()
+        cursor.close()
+        conn.close()
+        return render_template("list.html", entries=entries)
 
 @app.route("/pre", methods=["GET"])
-def view_rooms():
+def view_reservierung():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT * FROM PRENOTAZIONE")
     entries = cursor.fetchall()
     cursor.close()
     conn.close()
-    return render_template("list.html", entries=entries)
+    return render_template("reservierung.html", entries=entries)
 
 if __name__ == "__main__":
-
-
     app.run(debug=True)
