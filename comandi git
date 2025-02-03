@@ -8,3 +8,5 @@ hint:   git config pull.rebase true   # rebase
 in caso di problemi con i commit
 
 ----
+
+mysql -u fade -p -h localhost -P 3306
