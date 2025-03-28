@@ -58,3 +58,8 @@ INSERT INTO GIOCATORE_PARTITA (partita_id, giocatore_id, ha_segnato) VALUES
 (3, 6, TRUE);
 
 SELECT id, nome, cognome FROM ALLENATORE;
+
+CREATE TABLE IF NOT EXISTS SQUADRA (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    data TEXT
+);

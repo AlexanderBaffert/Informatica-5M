@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allenatori</title>
+    <title>Corpi Celesti</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-4">
-        <h1 class="mb-4">Partite</h1>
+        <h1 class="mb-4">Corpi Celesti</h1>
         <div class="table-responsive mb-4">
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>data</th>
+                        <th>Categoria</th>
+                        <th>Magnitudo</th>
+                        <th>Distanza-parsec</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for partita in entries %}
+                    {% for corpo in corpi %}
                     <tr>
-                        <td>{{ partita['id'] }}</td>
-                        <td>{{ partita['data'] }}</td>
+                        <td>{{ corpo.id }}</td>
+                        <td>{{ corpo.categoria }}</td>
+                        <td>{{ corpo.magnitudo }}</td>
+                        <td>{{ corpo.distanza_parsec }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
-            </table>        
+            </table>
+        </div>
         <a class="btn btn-primary" href="/">Torna a Home</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

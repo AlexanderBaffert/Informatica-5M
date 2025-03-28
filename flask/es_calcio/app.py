@@ -77,6 +77,15 @@ def allenatore():
     cursor.close()
     return render_template("allenatore.html", entrieses=entrieses)
 
+@app.route("/squadre")
+def squadre():
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT id, data FROM ")
+    entries = cursor.fetchall()
+    cursor.close()
+    return render_template("squadre.html", entries=entries)
+
 if __name__ == "__main__":
     if not os.path.exists(DATABASE):
         init_db()

@@ -1,0 +1,4 @@
+{
+    "INITIALIZATION": "query.sql",
+    "DATABASE": "data.db"
+}
