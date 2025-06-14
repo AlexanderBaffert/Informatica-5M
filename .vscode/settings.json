@@ -25,6 +25,12 @@
             "name": "informatica",
             "database": "hotel",
             "username": "fade"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "PREPARAZIONE ESAME",
+            "database": "${workspaceFolder:Informatica-5M}/PREPARAZIONE ALL'ESAME/scuola.db"
         }
     ]
 }
